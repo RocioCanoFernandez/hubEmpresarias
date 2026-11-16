@@ -1,0 +1,771 @@
+/* ==============================================================================
+   ESTILOS OFICIALES - HUB DIGITAL EMPRESARIAS SEVILLANAS
+   Ecosistema SeviAI - Mobile First, Ultrarrápido y Elegante
+   ============================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Paleta Corporativa Empresarias Sevillanas */
+  --color-primary: #E65016;          /* Naranja corporativo vibrante */
+  --color-primary-hover: #D0410A;    /* Naranja oscuro para interacciones */
+  --color-primary-light: #FFF4EE;    /* Fondo suave anaranjado */
+  --color-primary-soft: rgba(230, 80, 22, 0.08);
+  --color-accent-gold: #F59E0B;      /* Toque cálido dorado para eventos destacados */
+  
+  /* Tonos neutros */
+  --color-dark: #1F2421;             /* Negro carbón elegante para títulos */
+  --color-text-main: #374151;        /* Gris oscuro para párrafos principales */
+  --color-text-muted: #6B7280;       /* Gris medio para descripciones secundarias */
+  --color-border: #F0ECE6;           /* Borde sutil y limpio */
+  --color-white: #FFFFFF;
+  --color-bg-page: #F6F4F0;          /* Fondo cálido crema para visualización desktop */
+
+  /* Tipografía */
+  --font-headings: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Bordes y Sombras */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 16px rgba(230, 80, 22, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 10px 25px rgba(230, 80, 22, 0.12), 0 3px 6px rgba(0, 0, 0, 0.04);
+  --shadow-floating: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadow-featured: 0 8px 30px rgba(230, 80, 22, 0.22);
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor Mobile-First */
+.hub-wrapper {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--color-white);
+  min-height: 100vh;
+  position: relative;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 95px; /* Margen para botón flotante de WhatsApp */
+  overflow-x: hidden;
+}
+
+@media (min-width: 520px) {
+  body {
+    padding: 2rem 1rem;
+  }
+  .hub-wrapper {
+    min-height: calc(100vh - 4rem);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(230, 80, 22, 0.12);
+  }
+}
+
+/* ==============================================================================
+   BOTÓN FLOTANTE SUPERIOR DERECHO (VCARD) - ESTÁNDAR SEVIAI
+   ============================================================================== */
+.floating-vcard-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 20;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(230, 80, 22, 0.2);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-vcard-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 8px 20px rgba(230, 80, 22, 0.35);
+}
+
+.floating-vcard-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+}
+
+/* Tooltip sutil en desktop */
+.floating-vcard-btn::after {
+  content: "Guardar Contacto";
+  position: absolute;
+  right: 58px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.floating-vcard-btn:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==============================================================================
+   CABECERA VISUAL Y BRANDING
+   ============================================================================== */
+.header-hero {
+  position: relative;
+  background-image: url('public/empresariassevillanas_fondo.png');
+  background-size: cover;
+  background-position: center top;
+  padding: 3.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.98) 100%);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  border: 1px solid rgba(230, 80, 22, 0.18);
+  color: var(--color-primary);
+  font-family: var(--font-headings);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.brand-logo-container {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo-container:hover {
+  transform: scale(1.02);
+}
+
+.brand-logo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.hub-title {
+  font-family: var(--font-headings);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.hub-slogan {
+  font-family: var(--font-headings);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.65rem;
+}
+
+.hub-description {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  max-width: 90%;
+  margin: 0 auto 1.25rem auto;
+}
+
+/* Barra de Contacto Rápido */
+.quick-contact-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.quick-contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  background: var(--color-white);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.2s ease;
+}
+
+.quick-contact-chip:hover {
+  color: var(--color-primary);
+  border-color: rgba(230, 80, 22, 0.3);
+  transform: translateY(-1px);
+}
+
+.quick-contact-chip svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-primary);
+}
+
+/* ==============================================================================
+   CONTENIDO PRINCIPAL Y BOTONERA
+   ============================================================================== */
+.main-content {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-headings);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* ==============================================================================
+   TARJETA DESTACADA: COMIDA DE NAVIDAD (PRIORIDAD ALTA)
+   ============================================================================== */
+.featured-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-featured-navidad {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: linear-gradient(135deg, #FFF7F2 0%, #FFFFFF 100%);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-featured);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-featured-navidad::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform: skewX(-20deg);
+  animation: shine 3.5s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  30% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.card-featured-navidad:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(230, 80, 22, 0.28);
+  border-color: var(--color-primary-hover);
+}
+
+.navidad-badge-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.badge-priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-headings);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge-festive {
+  font-size: 12px;
+  color: var(--color-primary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navidad-title {
+  font-family: var(--font-headings);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.navidad-desc {
+  font-size: 0.84rem;
+  color: var(--color-text-main);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.navidad-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-headings);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.card-featured-navidad:hover .navidad-action-btn {
+  background-color: var(--color-primary-hover);
+}
+
+.navidad-action-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s ease;
+}
+
+.card-featured-navidad:hover .navidad-action-btn svg {
+  transform: translateX(4px);
+}
+
+/* ==============================================================================
+   BOTONES Y TARJETAS ESTÁNDAR
+   ============================================================================== */
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.btn-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.15rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-card);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(230, 80, 22, 0.35);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Iconos de las tarjetas */
+.btn-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 1rem;
+  transition: all 0.25s ease;
+}
+
+.btn-card-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Variantes de color para iconos */
+.icon-primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.btn-card:hover .icon-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.icon-blue {
+  background: #EFF6FF;
+  color: #2563EB;
+}
+
+.btn-card:hover .icon-blue {
+  background: #2563EB;
+  color: var(--color-white);
+}
+
+.icon-purple {
+  background: #FAF5FF;
+  color: #9333EA;
+}
+
+.btn-card:hover .icon-purple {
+  background: #9333EA;
+  color: var(--color-white);
+}
+
+.icon-green {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.btn-card:hover .icon-green {
+  background: #059669;
+  color: var(--color-white);
+}
+
+/* Texto de las tarjetas */
+.btn-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.btn-card-title {
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-card-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge-pill {
+  font-family: var(--font-headings);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: rgba(230, 80, 22, 0.12);
+  color: var(--color-primary);
+}
+
+/* Flecha de acción */
+.btn-card-arrow {
+  color: #D1D5DB;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.btn-card:hover .btn-card-arrow {
+  color: var(--color-primary);
+  transform: translateX(3px);
+}
+
+.btn-card-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Estilo especial para la descarga del PDF de Socia */
+.btn-card-download {
+  border: 1.5px solid rgba(230, 80, 22, 0.3);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFDFC 100%);
+}
+
+.btn-card-download .btn-card-icon {
+  background: #FFF1EB;
+  color: var(--color-primary);
+}
+
+.btn-card-download:hover .btn-card-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ==============================================================================
+   REDES SOCIALES Y CONTACTO COMPACTO
+   ============================================================================== */
+.social-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.social-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 0.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text-main);
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.25s ease;
+}
+
+.social-pill svg {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 5px;
+  transition: transform 0.2s ease;
+}
+
+.social-pill span {
+  font-family: var(--font-headings);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.social-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(230, 80, 22, 0.35);
+  box-shadow: var(--shadow-card);
+  color: var(--color-primary);
+}
+
+.social-pill:hover svg {
+  transform: scale(1.15);
+}
+
+.social-pill.linkedin:hover {
+  color: #0A66C2;
+  border-color: rgba(10, 102, 194, 0.3);
+}
+
+.social-pill.instagram:hover {
+  color: #E1306C;
+  border-color: rgba(225, 48, 108, 0.3);
+}
+
+.social-pill.facebook:hover {
+  color: #1877F2;
+  border-color: rgba(24, 119, 242, 0.3);
+}
+
+.social-pill.twitter:hover {
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ==============================================================================
+   BOTÓN FLOTANTE INFERIOR DERECHO (WHATSAPP) - ESTÁNDAR SEVIAI
+   ============================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 99;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: #25D366;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-floating);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  background-color: #1EBE5D;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp-btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Tooltip WhatsApp */
+.floating-whatsapp-btn::before {
+  content: "WhatsApp Asociación";
+  position: absolute;
+  right: 68px;
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateX(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.floating-whatsapp-btn:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==============================================================================
+   FOOTER OFICIAL SEVIAI ECOSYSTEM (OBLIGATORIO)
+   ============================================================================== */
+.hub-footer {
+  margin-top: auto;
+  padding: 2.25rem 1.5rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 100%);
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.85rem;
+}
+
+.footer-ecosystem-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font-headings);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(31, 36, 33, 0.7);
+  transition: all 0.3s ease;
+}
+
+.footer-ecosystem-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-seviai-logo {
+  height: 16px;
+  width: auto;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.footer-ecosystem-link:hover .footer-seviai-logo {
+  opacity: 1;
+  filter: grayscale(0%);
+}

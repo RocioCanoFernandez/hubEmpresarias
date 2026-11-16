@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empresarias Sevillanas | Hub Digital Oficial</title>
+  
+  <!-- SEO & Metadatos Oficiales -->
+  <meta name="description" content="Hub digital oficial de la Asociación de Mujeres Empresarias Hispalenses (Empresarias Sevillanas). Acceso a formularios, inscripción a la comida de Navidad, solicitud de socia y canales oficiales.">
+  <meta name="author" content="SeviAI Ecosystem">
+  
+  <!-- Favicon e Iconos -->
+  <link rel="icon" type="image/png" href="public/empresariassevillanas_logo.png">
+  <link rel="apple-touch-icon" href="public/empresariassevillanas_logo.png">
+
+  <!-- Open Graph / Redes Sociales & WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Empresarias Sevillanas | Hub Digital Oficial">
+  <meta property="og:description" content="Mujeres que inspiran, empresas que transforman. Descarga la solicitud de socia, inscríbete en la comida de Navidad y conecta con nuestra red empresarial.">
+  <meta property="og:image" content="public/empresariassevillanas_logo.png">
+  <meta property="og:site_name" content="Empresarias Sevillanas">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Contenedor Principal (Mobile-First) -->
+  <div class="hub-wrapper">
+    
+    <!-- Botón Flotante Superior Derecho: Descarga de vCard Oficial para Móvil y NFC -->
+    <button class="floating-vcard-btn" id="btn-save-vcard" onclick="generateVCard()" aria-label="Guardar contacto en la agenda del móvil" title="Guardar Contacto Oficial">
+      <!-- Icono de contacto / descarga -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <line x1="19" y1="8" x2="19" y2="14"/>
+        <line x1="22" y1="11" x2="16" y2="11"/>
+      </svg>
+    </button>
+
+    <!-- Cabecera Visual y Branding Corporativo -->
+    <header class="header-hero">
+      <div class="header-content">
+        <!-- Distintivo institucional -->
+        <div class="brand-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          Asociación de Mujeres Empresarias Hispalenses
+        </div>
+
+        <!-- Logotipo Oficial de Empresarias Sevillanas -->
+        <div class="brand-logo-container">
+          <img src="public/empresariassevillanas_logo.png" alt="Empresarias Sevillanas" class="brand-logo" loading="eager">
+        </div>
+
+        <!-- Título y Eslogan de la Asociación -->
+        <h1 class="hub-title">Empresarias Sevillanas</h1>
+        <p class="hub-slogan">Mujeres que inspiran, empresas que transforman</p>
+        <p class="hub-description">
+          Red empresarial referente en Sevilla con más de 10 años impulsando el talento femenino, generando sinergias reales, formación continua y visibilidad para empresarias y autónomas.
+        </p>
+
+        <!-- Barra de Contacto Directo Clicable -->
+        <div class="quick-contact-bar">
+          <a href="tel:+34672689247" class="quick-contact-chip" title="Llamar por teléfono">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            672 68 92 47
+          </a>
+          <a href="mailto:info@empresariassevillanas.es" class="quick-contact-chip" title="Enviar correo electrónico">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            info@empresariassevillanas.es
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido y Enlaces Funcionales -->
+    <main class="main-content">
+
+      <!-- ====================================================================
+           SECCIÓN PRIORITARIA 1: COMIDA DE NAVIDAD (PRIORIDAD ALTA)
+           ==================================================================== -->
+      <section class="featured-card-container">
+        <div class="section-label">Evento Destacado · Prioridad</div>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrGFj2B5HsQWituBtckty25glBaOQQHjmLbt9_tYHtDLwSWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="card-featured-navidad" id="card-comida-navidad">
+          <div class="navidad-badge-wrap">
+            <span class="badge-priority">Prioridad Alta</span>
+            <span class="badge-festive">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/>
+              </svg>
+              Encuentro Navideño
+            </span>
+          </div>
+
+          <h2 class="navidad-title">Comida de Navidad Empresarias Sevillanas</h2>
+          <p class="navidad-desc">
+            Celebramos nuestro tradicional almuerzo de convivencia para brindar por los éxitos compartidos, reforzar alianzas y dar la bienvenida al nuevo año en comunidad.
+          </p>
+
+          <div class="navidad-action-btn">
+            <span>Rellenar Formulario de Inscripción</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </div>
+        </a>
+      </section>
+
+      <!-- ====================================================================
+           SECCIÓN 2: ASÓCIATE - DESCARGA DE SOLICITUD (PDF)
+           ==================================================================== -->
+      <section>
+        <div class="section-label">Incorporación de Nuevas Socias</div>
+        <div class="button-grid">
+          
+          <!-- Botón de Descarga del PDF de Solicitud de Socia -->
+          <a href="public/Solicitud_Asociada_Empresarias_Sevillanas.pdf" download="Solicitud_Asociada_Empresarias_Sevillanas.pdf" target="_blank" class="btn-card btn-card-download" id="btn-descarga-pdf-socia">
+            <div class="btn-card-icon">
+              <!-- Icono de documento PDF con flecha hacia abajo -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="12" y1="18" x2="12" y2="12"/>
+                <line x1="9" y1="15" x2="12" y2="18"/>
+                <line x1="15" y1="15" x2="12" y2="18"/>
+              </svg>
+            </div>
+            <div class="btn-card-body">
+              <div class="btn-card-title">
+                Descargar Solicitud de Socia (PDF)
+                <span class="badge-pill">PDF Oficial</span>
+              </div>
+              <p class="btn-card-desc">Solicitud de incorporación y autorización bancaria</p>
+            </div>
+            <div class="btn-card-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECCIÓN 3: WEB OFICIAL Y CANALES DE INFORMACIÓN
+           ==================================================================== -->
+      <section>
+        <div class="section-label">Web Oficial y Recursos</div>
+        <div class="button-grid">
+          
+          <!-- Enlace a la Web Oficial -->
+          <a href="https://empresariassevillanas.es/" target="_blank" rel="noopener noreferrer" class="btn-card" id="btn-web-oficial">
+            <div class="btn-card-icon icon-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+            <div class="btn-card-body">
+              <div class="btn-card-title">Página Web Oficial</div>
+              <p class="btn-card-desc">Conoce la asociación, junta directiva y asociadas</p>
+            </div>
+            <div class="btn-card-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Enlace preparado para el Boletín Informativo -->
+          <a href="https://empresariassevillanas.es/contacto/" target="_blank" rel="noopener noreferrer" class="btn-card" id="btn-boletin-informativo">
+            <div class="btn-card-icon icon-blue">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="btn-card-body">
+              <div class="btn-card-title">
+                Boletín Informativo
+                <span class="badge-pill">Próximamente</span>
+              </div>
+              <p class="btn-card-desc">Actualidad, eventos, convenios y convocatorias</p>
+            </div>
+            <div class="btn-card-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECCIÓN 4: FORMULARIOS Y GESTIONES DE ASOCIADAS
+           ==================================================================== -->
+      <section>
+        <div class="section-label">Formularios y Trámites</div>
+        <div class="button-grid">
+          
+          <!-- Acceso directo al formulario de Navidad -->
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrGFj2B5HsQWituBtckty25glBaOQQHjmLbt9_tYHtDLwSWg/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="btn-card" id="btn-form-navidad-secundario">
+            <div class="btn-card-icon icon-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <div class="btn-card-body">
+              <div class="btn-card-title">Inscripción Comida de Navidad</div>
+              <p class="btn-card-desc">Formulario oficial de reserva y confirmación de asistencia</p>
+            </div>
+            <div class="btn-card-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Espacio preparado para futuros formularios personales/asociativos -->
+          <div class="btn-card" style="cursor: default; opacity: 0.85;">
+            <div class="btn-card-icon icon-purple">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <div class="btn-card-body">
+              <div class="btn-card-title">
+                Otros Formularios y Encuestas
+                <span class="badge-pill">En preparación</span>
+              </div>
+              <p class="btn-card-desc">Censo de asociadas, propuestas y necesidades internas</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECCIÓN 5: REDES SOCIALES OFICIALES
+           ==================================================================== -->
+      <section>
+        <div class="section-label">Comunidad y Redes Sociales</div>
+        <div class="social-links-grid">
+          
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/company/empresarias-sevillanas" target="_blank" rel="noopener noreferrer" class="social-pill linkedin" title="Síguenos en LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.81a1.63 1.63 0 1 0 1.63 1.63 1.63 1.63 0 0 0-1.63-1.63z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/empresariassevillanas/" target="_blank" rel="noopener noreferrer" class="social-pill instagram" title="Síguenos en Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+            <span>Instagram</span>
+          </a>
+
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/empresariassevillanas" target="_blank" rel="noopener noreferrer" class="social-pill facebook" title="Síguenos en Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebook</span>
+          </a>
+
+          <!-- X / Twitter -->
+          <a href="https://x.com/EmpresariasSE" target="_blank" rel="noopener noreferrer" class="social-pill twitter" title="Síguenos en X">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span>Twitter/X</span>
+          </a>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Botón Flotante Inferior Derecho: WhatsApp Oficial de la Asociación -->
+    <a href="https://wa.me/34672689247?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20Empresarias%20Sevillanas" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="btn-floating-whatsapp" aria-label="Contactar por WhatsApp con Empresarias Sevillanas" title="Contactar por WhatsApp">
+      <!-- Icono oficial de WhatsApp -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.16c-1.48 0-2.91-.4-4.15-1.14l-.3-.17-3.14.82.84-3.07-.19-.3a7.97 7.97 0 0 1-1.19-4.39c0-4.49 3.66-8.15 8.15-8.15 2.17 0 4.25.85 5.78 2.38a8.12 8.12 0 0 1 2.38 5.78c0 4.49-3.66 8.14-8.15 8.14zm4.48-6.09c-.24-.12-1.45-.72-1.67-.8-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.73-.65-1.23-1.46-1.37-1.7-.14-.24-.02-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.8-.2-.48-.4-.41-.55-.41h-.47c-.16 0-.43.06-.65.3-.22.24-.86.84-.86 2.06 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.24 3.74.59.25 1.05.4 1.41.51.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.68-1.2.2-.6.2-1.14.14-1.26-.06-.12-.22-.19-.46-.31z"/>
+      </svg>
+    </a>
+
+    <!-- Footer Oficial SeviAI Ecosystem (Obligatorio) -->
+    <footer class="hub-footer">
+      <p class="footer-copy">© 2026 Asociación de Mujeres Empresarias Hispalenses · SeviAI Ecosystem</p>
+      <a href="https://www.seviai.es/" target="_blank" rel="noopener noreferrer" class="footer-ecosystem-link" title="SeviAI - Consultoría e Inteligencia Artificial">
+        <span>SeviAI Ecosystem</span>
+        <img src="public/logo_sin_fondo.png" alt="SeviAI" class="footer-seviai-logo">
+      </a>
+    </footer>
+
+  </div>
+
+  <!-- Lógica vCard -->
+  <script src="vcard.js"></script>
+</body>
+</html>
